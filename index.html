@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeffrey Program</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+    }
+    .header {
+      background: #f00000;
+      color: white;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      border-bottom-left-radius: 40px;
+    }
+    .plane {
+      width: 200px;
+      margin: 30px auto 20px;
+    }
+    .coefficient-circle {
+      border: 4px solid #f00000;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 auto 30px;
+    }
+    .next-button {
+      background-color: #f00000;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .next-button:hover {
+      background-color: #c00000;
+    }
+    .footer {
+      width: 100%;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      font-size: 20px;
+    }
+    .footer .icon {
+      font-size: 24px;
+      color: #f00000;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Jeffrey Program</div>
+  <img src="plane_red.png" alt="Plane" class="plane" />
+  <div class="coefficient-circle" id="coefficient">1.00x</div>
+  <button class="next-button" onclick="generateCoefficient()">Next</button>
+  <div class="footer">
+    <div class="icon">⌂</div>
+    <div id="timer">53:17</div>
+    <div class="icon">💬</div>
+  </div>
+  <script>
+    function generateCoefficient() {
+      const min = 1.10;
+      const max = 8.50;
+      const coeff = (Math.random() * (max - min) + min).toFixed(2);
+      document.getElementById('coefficient').innerText = coeff + 'x';
+    }
+  </script>
+</body>
+</html>
